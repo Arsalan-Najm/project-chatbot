@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# THE APP IS CURRENTLY ON DEVELOPMENT.
+# THE APP IS CURRENTLY IN DEVELOPMENT.
 
 ## Getting Started
 
