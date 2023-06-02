@@ -16,7 +16,7 @@ const Hero = () => {
       >
         <motion.h1
           variants={textVariant(1.1)}
-          className='text-center uppercase text-sub-100 text-5xl sm:text-[100px] font-bold leading-[64px] sm:leading-[112px] z-10'
+          className='text-center uppercase text-sub-100  md:text-[100px] sm:text-[60px] text-[44px] font-bold leading-[64px] sm:leading-[112px] z-10'
         >
           <span>
             <span className='text-transparent bg-clip-text bg-gradient-to-br from-[#cb6573] to-[#2a52be]'>Howdy!</span>{' '}

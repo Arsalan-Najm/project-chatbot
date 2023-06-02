@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { containerVariant, fadeIn } from '@/utils/motion';
 import WorksImage from '../public/ai.webp';
 import Image from 'next/image';
+import { TypeAnimation } from 'react-type-animation';
 const HowItWorks = () => {
   return (
     <section className='sm:p-16 xs:p-8 px-6 py-12 relative z-10'>
@@ -18,7 +19,12 @@ const HowItWorks = () => {
         </motion.div>
         <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} className='flex-[0.75] flex justify-center flex-col'>
           <p className='font-normal text-xl text-sub-200'>
-            <span>| How ChitChat works?</span>
+            <TypeAnimation
+              sequence={['|', 1000, ' How ChitChat Works?', 1000]}
+              repeat={Infinity}
+              cursor={true}
+              wrapper='span'
+            />
           </p>
           <h2 className='mt-2 font-bold text-5xl sm:text-7xl text-sub-100'>Get started with just a few clicks</h2>
           <div className='mt-8 flex flex-col gap-6 max-w-sm'>

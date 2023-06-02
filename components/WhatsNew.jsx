@@ -15,19 +15,12 @@ const WhatsNew = () => {
         viewport={{ once: false, amount: 0.25 }}
         className='2xl:max-w-[1280px] w-full mx-auto flex lg:flex-row flex-col gap-8'
       >
-        <div className='flex-[0.95] flex justify-center flex-col'>
+        <motion.div variants={fadeIn('right', 'tween', 0.2, 1)} className='flex-[0.95] flex justify-center flex-col'>
           <p className='font-normal text-xl text-sub-200'>
-            <span>| Whats New?</span>
+            <TypeAnimation sequence={['|', 1000, ' Whats New?', 1000]} repeat={Infinity} cursor={true} wrapper='span' />
           </p>
           <h2 className='mt-2 font-bold text-5xl sm:text-7xl text-sub-100'>
-            <span>Powered By </span>
-            <TypeAnimation
-              sequence={['Google Oauth', 1000, 'Next auth', 1000]}
-              repeat={Infinity}
-              cursor={false}
-              wrapper='span'
-            />
-            <span> Functions.</span>
+            <span>Powered By Google Oauth Functions.</span>
           </h2>
 
           <div className='mt-11 flex flex-wrap justify-between gap-6'>
@@ -50,7 +43,7 @@ const WhatsNew = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
         <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} className='flex-1 flex justify-center items-center'>
           <Image src={Poster} className='w-[90%] h-[90%] object-contain' />
         </motion.div>

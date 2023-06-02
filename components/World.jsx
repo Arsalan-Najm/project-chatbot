@@ -6,6 +6,7 @@ import UsaFlag from '../public/usa.webp';
 import QatarFlag from '../public/qatar.webp';
 import { motion } from 'framer-motion';
 import { containerVariant, fadeIn } from '@/utils/motion';
+import { TypeAnimation } from 'react-type-animation';
 const World = () => {
   return (
     <section className='sm:p-16 xs:p-8 px-6 py-12 relative z-10'>
@@ -17,7 +18,12 @@ const World = () => {
         className='2xl:max-w-[1280px] w-full mx-auto flex flex-col'
       >
         <p className='font-normal text-xl sm:text-2xl text-sub-200 text-center'>
-          <span>| Connect From Anywhere</span>
+          <TypeAnimation
+            sequence={['|', 1000, ' Connect From Anywhere', 1000]}
+            repeat={Infinity}
+            cursor={true}
+            wrapper='span'
+          />
         </p>
         <h2 className='mt-2 font-bold text-5xl sm:text-7xl text-sub-100 text-center'>
           No Limitation, Effortlessly Connect and Collaborate with Your AI Buddy.
