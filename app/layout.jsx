@@ -11,12 +11,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`main ${tajawal.className}`}>
+      <body className={`main bg-black ${tajawal.className}`}>
         <Provider>
-          <main>
+          <div className='relative overflow-hidden'>
             <NavBar />
-            {children}
-          </main>
+            <main className='relative'>{children}</main>
+          </div>
         </Provider>
       </body>
     </html>

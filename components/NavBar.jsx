@@ -6,9 +6,16 @@ import Image from 'next/image';
 const NavBar = () => {
   const { data: session } = useSession();
   return (
-    <motion.nav initial='hidden' whileInView='show' variants={navbarVariants} className='sm:px-16 px-6 py-8 relative '>
-      <div className='2xl:max-w-[1280px] w-full flex justify-between items-center gap-8 mx-auto'>
-        <h3 className='text-sub-100 font-extrabold text-[24px] sm:text-4xl'>ChitChat</h3>
+    <header className='relative z-50'>
+      <motion.nav
+        initial='hidden'
+        whileInView='show'
+        variants={navbarVariants}
+        className={`2xl:max-w-[1280px] w-full flex justify-between items-center gap-8 mx-auto sm:p-8 xs:p-8 px-6 py-6 ${
+          session ? null : 'absolute left-0 right-0'
+        }`}
+      >
+        <h3 className='text-sub-100 font-extrabold text-[24px] sm:text-4xl'>GamePedia</h3>
         {session?.user.name ? (
           <div className='flex gap-4'>
             <button
@@ -34,9 +41,8 @@ const NavBar = () => {
             Sign In
           </button>
         )}
-      </div>
-      <div className='h-8'></div>
-    </motion.nav>
+      </motion.nav>
+    </header>
   );
 };
 

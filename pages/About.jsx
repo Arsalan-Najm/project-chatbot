@@ -15,7 +15,7 @@ const About = () => {
       >
         <p className='font-normal text-xl sm:text-2xl text-sub-200 text-center'>
           <TypeAnimation
-            sequence={['|', 1000, ' About ChitChat', 1000]}
+            sequence={['|', 1000, ' About GamePedia', 1000]}
             repeat={Infinity}
             cursor={true}
             wrapper='span'
@@ -25,10 +25,10 @@ const About = () => {
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className='mt-[8px] font-normal text-[20px] sm:text-[32px] text-center text-sub-100'
         >
-          ChitChat is an ultimate AI chatbot. Accessible and user-friendly, it's your go-to solution for finding quick
-          answers. Say goodbye to endless searches and wasted time. With Chitchat, you can effortlessly access a wealth
-          of information, getting the answers you need in an instant. Simplify your search process and enhance your
-          productivity with Chitchat, the reliable AI chatbot at your fingertips.
+          Welcome to GamePedia, the ultimate web-app for all your video game information needs! With GamePedia, you can
+          effortlessly explore and discover detailed information about any video game across all platforms. From popular
+          titles to hidden gems, GamePedia provides comprehensive details, including game summaries, genres, release
+          dates, developer information, and much more.
         </motion.p>
         <BsArrowDown className='text-sub-200 mt-7 scale-[2]' />
       </motion.div>

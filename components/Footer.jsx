@@ -6,12 +6,12 @@ const Footer = () => {
     <footer className='sm:px-16 px-6 py-8 relative'>
       <div className='2xl:max-w-[1280px] w-full mx-auto flex flex-col gap-8'>
         <div className='flex items-center justify-between flex-wrap gap-5'>
-          <h3 className='font-bold text-5xl sm:text-7xl text-sub-100'>Explore The ChitChat</h3>
+          <h3 className='font-bold text-5xl sm:text-7xl text-sub-100'>Explore GamePedia</h3>
           <button
             className='py-4 px-6 text-sub-100 text-lg rounded-full bg-main-100 drop-shadow-sm font-semibold hover:bg-opacity-50'
             onClick={() => signIn('google')}
           >
-            Let's Chat
+            Let's Explore
           </button>
         </div>
         <div className='flex flex-col'>
@@ -36,7 +36,7 @@ const Footer = () => {
         <div className='mb-[50px] h-[2px] bg-sub-100 opacity-10'></div>
         <div className='text-center '>
           <p className='font-normal text-xl text-sub-100 opacity-50'>
-            Copyright &copy; 2023 ChitChat. Designed And Developed By{' '}
+            Copyright &copy; 2023 GamePedia. Designed And Developed By{' '}
             <a href='https://arsalan-najm.web.app/' target='_blank' rel='noreferrer' className='underline'>
               Arsalan Najm.
             </a>

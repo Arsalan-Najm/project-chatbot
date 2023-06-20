@@ -26,7 +26,7 @@ const World = () => {
           />
         </p>
         <h2 className='mt-2 font-bold text-5xl sm:text-7xl text-sub-100 text-center'>
-          No Limitation, Effortlessly Connect and Collaborate with Your AI Buddy.
+          No Limitation, Effortlessly Connect and Start Your Gaming Journey.
         </h2>
         <motion.div variants={fadeIn('up', 'tween', 0.3, 1)} className='relative mt-[68px] flex w-full h-[550px]'>
           <Image src={Map} className='w-full h-full object-cover' />

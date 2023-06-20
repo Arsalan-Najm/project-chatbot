@@ -20,7 +20,7 @@ const HowItWorks = () => {
         <motion.div variants={fadeIn('left', 'tween', 0.2, 1)} className='flex-[0.75] flex justify-center flex-col'>
           <p className='font-normal text-xl text-sub-200'>
             <TypeAnimation
-              sequence={['|', 1000, ' How ChitChat Works?', 1000]}
+              sequence={['|', 1000, ' How GamePedia Works?', 1000]}
               repeat={Infinity}
               cursor={true}
               wrapper='span'
@@ -49,7 +49,7 @@ const HowItWorks = () => {
                 <span className=' font-bold text-2xl text-sub-100'>0 3</span>
               </div>
               <p className='flex-1 ml-7 font-normal text-xl  text-sub-200 leading-[32.4px]'>
-                Type your prompt and click to see the magic.
+                Once you've logged in start exploring GamePedia.
               </p>
             </div>
           </div>
