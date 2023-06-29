@@ -25,7 +25,7 @@ const WhatsNew = () => {
 
           <div className='mt-11 flex flex-wrap justify-between gap-6'>
             <div className='flex-1 flex flex-col sm:max-w-[250px] min-w-[210px]'>
-              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-[24px] bg-[#031320]'>
+              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-[24px] bg-main-200'>
                 <BsShieldFillCheck className='text-sub-100 scale-150' />
               </div>
               <h3 className='mt-[26px] font-bold text-3xl leading-[30.24px] text-sub-100'>Secured Than Ever</h3>
@@ -34,7 +34,7 @@ const WhatsNew = () => {
               </p>
             </div>
             <div className='flex-1 flex flex-col sm:max-w-[250px] min-w-[210px]'>
-              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-[24px] bg-[#031320]'>
+              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-[24px] bg-main-200'>
                 <BsRobot className='text-sub-100 scale-150' />
               </div>
               <h3 className='mt-[26px] font-bold text-3xl leading-[30.24px] text-sub-100'>Secure Credentials</h3>

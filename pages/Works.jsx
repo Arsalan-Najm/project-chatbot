@@ -29,7 +29,7 @@ const HowItWorks = () => {
           <h2 className='mt-2 font-bold text-5xl sm:text-7xl text-sub-100'>Get started with just a few clicks</h2>
           <div className='mt-8 flex flex-col gap-6 max-w-sm'>
             <div className='flex justify-center items-center flex-row'>
-              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-3xl bg-[#031320]'>
+              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-3xl bg-main-200'>
                 <span className=' font-bold text-2xl text-sub-100'>0 1</span>
               </div>
               <p className='flex-1 ml-7 font-normal text-xl  text-sub-200 leading-[32.4px]'>
@@ -37,7 +37,7 @@ const HowItWorks = () => {
               </p>
             </div>
             <div className='flex justify-center items-center flex-row'>
-              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-3xl bg-[#031320]'>
+              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-3xl bg-main-200'>
                 <span className=' font-bold text-2xl text-sub-100'>0 2</span>
               </div>
               <p className='flex-1 ml-7 font-normal text-xl  text-sub-200 leading-[32.4px]'>
@@ -45,7 +45,7 @@ const HowItWorks = () => {
               </p>
             </div>
             <div className='flex justify-center items-center flex-row'>
-              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-3xl bg-[#031320]'>
+              <div className='flex justify-center items-center w-[70px] h-[70px] rounded-3xl bg-main-200'>
                 <span className=' font-bold text-2xl text-sub-100'>0 3</span>
               </div>
               <p className='flex-1 ml-7 font-normal text-xl  text-sub-200 leading-[32.4px]'>

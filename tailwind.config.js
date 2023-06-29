@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         main: {
           100: '#1a232e',
+          200: '#031320',
         },
         sub: {
           100: '#fbfbfb',

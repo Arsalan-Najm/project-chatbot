@@ -15,5 +15,8 @@
   min-height: 100vh;
   background: linear-gradient(90deg, #1a232e, #031320);
 }
-
-
+.template {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
