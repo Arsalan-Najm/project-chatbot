@@ -6,25 +6,39 @@ import { useApp } from '@/context/AppContext';
 import { useEffect } from 'react';
 const ChatPage = () => {
   const { data: session, status } = useSession();
-  const { toggle, setToggle, data, setData } = useApp();
+  const { toggle, setToggle, data, setData, page, setPage, loading, setLoading } = useApp();
   useEffect(() => {
     const fetchGames = async () => {
-      const response = await fetch('/api/games');
+      setLoading(true);
+      const response = await fetch(`/api/games?page=${page}`);
       const data = await response.json();
-      setData(data);
+      const mappedData = data.results.map((item) => ({
+        ...item,
+        isFavorite: false,
+        expand: false,
+      }));
+      setData((prevGames) => [...prevGames, ...mappedData]);
+      setLoading(false);
     };
     fetchGames();
-  }, []);
+  }, [page]);
+
+  const handleLoad = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
   return (
     <>
       {session && status === 'authenticated' ? (
-        <div className='flex justify-center w-full min-h-full lg:grow'>
-          <div className='flex w-full justify-between items-start'>
+        <div className='flex flex-grow-1 justify-center w-full min-h-full'>
+          <div className='px-[40px] flex justify-start items-start'>
             <Sidebar session={session} toggle={toggle} setToggle={setToggle} />
-            <div className='relative flex-col grow flex items-center lg:items-start m-auto min-h-full max-w-[480px] lg:max-w-full'>
-              <Title title='New and trending' subTitle='Based on player counts and release date' />
-              <GameCard data={data} setData={setData} />
-            </div>
+            <main className='max-w-[1920px] flex flex-col flex-grow w-full'>
+              <div>
+                <Title title='New and trending' subTitle='Based on player counts and release date' />
+                <GameCard data={data} setData={setData} handleLoad={handleLoad} loading={loading} />
+              </div>
+            </main>
           </div>
         </div>
       ) : (

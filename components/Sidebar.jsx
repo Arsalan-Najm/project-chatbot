@@ -1,39 +1,54 @@
 import { HomeData, SidebarLinks } from '@/utils/data';
+import React from 'react';
 import Link from 'next/link';
-import { BiX } from 'react-icons/bi';
+import { usePathname } from 'next/navigation';
 const Sidebar = ({ session, toggle, setToggle }) => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <>
       {/* desktop sidebar */}
-      <div className='hidden lg:flex px-[40px] flex-row items-start bg-main-100'>
-        <div className='sticky top-0 '>
-          <aside className='w-[180px] mr-[20px] my-[40px]'>
-            <nav>
-              <div className='flex gap-3'>
-                <Link href={HomeData.url} className=' text-2xl text-sub-200 font-semibold'>
-                  {HomeData.name}
-                </Link>
-              </div>
-              <div className='flex flex-col mt-6 gap-6'>
-                {SidebarLinks.map((item) => (
-                  <div>
-                    <h3 className='text-2xl text-sub-200 font-semibold'>{item.name}</h3>
-                    <div className='flex gap-3 flex-col  '>
-                      {item.links.map((link) => (
-                        <div className='flex gap-3 mt-4 items-center'>
-                          <button className='text-main-200 w-8 h-8 rounded-lg bg-sub-200'>{link.icon}</button>
-                          <Link href={'/'} className='text-lg text-sub-200 font-medium'>
-                            {link.name}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </nav>
-          </aside>
-        </div>
+      <div className='sticky top-0 bg-transparent  px-5 hidden lg:block'>
+        <aside className='w-[200px] mt-10 mr-5'>
+          <nav>
+            <div>
+              <Link
+                href={HomeData.url}
+                className={`flex gap-2 justify-start items-center mr-2 text-lg ${
+                  pathname === HomeData.url ? 'text-white font-bold' : 'text-sub-200 font-normal'
+                }`}
+              >
+                <span className='bg-main-200 flex items-center min-w-[32px] w-[32px] h-[32px] rounded-md object-cover'>
+                  {HomeData.icon}
+                </span>
+                <span className='text-lg'>{HomeData.name}</span>
+              </Link>
+            </div>
+            <div className='h-4'></div>
+            <div>
+              {SidebarLinks.map((link) => (
+                <>
+                  <span className='block text-3xl mb-4 font-bold text-sub-100'>{link.name}</span>
+                  <ul className='p-0 mb-6'>
+                    {link.links.map((item) => (
+                      <li className='mb-2'>
+                        <Link
+                          href='/'
+                          className='flex gap-2 justify-start items-center mr-2 text-lg text-sub-200 font-normal'
+                        >
+                          <span className='bg-main-200 flex items-center min-w-[32px] w-[32px] h-[32px] rounded-md object-cover'>
+                            {item.icon}
+                          </span>
+                          <span className='text-lg text-sub-200 font-normal'>{item.name}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ))}
+            </div>
+          </nav>
+        </aside>
       </div>
 
       {/* mobile sidebar */}
@@ -54,7 +69,9 @@ const Sidebar = ({ session, toggle, setToggle }) => {
                     <div className='flex flex-col gap-3'>
                       {item.links.map((link) => (
                         <div className='flex gap-2'>
-                          <button className='text-main-200 w-6 h-6 md:w-8 md:h-8 rounded-lg bg-sub-200'>{link.icon}</button>
+                          <button className='text-main-200 w-6 h-6 md:w-8 md:h-8 rounded-lg bg-sub-200'>
+                            {link.icon}
+                          </button>
                           <Link href={'/'} className='text-sm md:text-lg text-sub-200 font-medium'>
                             {link.name}
                           </Link>

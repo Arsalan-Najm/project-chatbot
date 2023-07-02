@@ -21,12 +21,13 @@ import {
   FaPlaystation,
   FaXbox,
   FaApple,
+  FaHome,
 } from 'react-icons/fa';
 import { FiUser } from 'react-icons/fi';
 export const HomeData = {
   name: 'Home',
-  url: '/',
-  icon: <BsBoxArrowRight className='m-auto scale-[1.3]' />,
+  url: '/discover',
+  icon: <FaHome className='m-auto scale-[1.3]' />,
 };
 
 export const SidebarLinks = [
