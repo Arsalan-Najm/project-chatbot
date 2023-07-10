@@ -2,26 +2,38 @@ import { HomeData, SidebarLinks } from '@/utils/data';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { BiX } from 'react-icons/bi';
 const Sidebar = ({ session, toggle, setToggle }) => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <>
       {/* desktop sidebar */}
-      <div className='sticky top-0 bg-transparent  px-5 hidden lg:block'>
+      <div className='sticky top-0 bg-transparent pr-5 hidden lg:block'>
         <aside className='w-[200px] mt-10 mr-5'>
           <nav>
             <div>
               <Link
                 href={HomeData.url}
-                className={`flex gap-2 justify-start items-center mr-2 text-lg ${
-                  pathname === HomeData.url ? 'text-white font-bold' : 'text-sub-200 font-normal'
+                className={` flex gap-2 justify-start items-center mr-2 text-lg group ${
+                  pathname === HomeData.url ? 'text-main-200 font-bold' : 'text-sub-200 font-normal'
                 }`}
               >
-                <span className='bg-main-200 flex items-center min-w-[32px] w-[32px] h-[32px] rounded-md object-cover'>
+                <span
+                  className={`duration-300 flex items-center min-w-[32px] w-[32px] h-[32px] rounded-md object-cover ${
+                    pathname === HomeData.url
+                      ? 'bg-white'
+                      : 'bg-main-200 group-hover:text-main-200 group-hover:bg-white'
+                  }`}
+                >
                   {HomeData.icon}
                 </span>
-                <span className='text-lg'>{HomeData.name}</span>
+                <span
+                  className={`text-lg ${
+                    pathname === HomeData.url ? 'text-white font-bold' : 'text-sub-200 font-normal'
+                  }}`}
+                >
+                  {HomeData.name}
+                </span>
               </Link>
             </div>
             <div className='h-4'></div>
@@ -33,13 +45,27 @@ const Sidebar = ({ session, toggle, setToggle }) => {
                     {link.links.map((item) => (
                       <li className='mb-2'>
                         <Link
-                          href='/'
-                          className='flex gap-2 justify-start items-center mr-2 text-lg text-sub-200 font-normal'
+                          href={item.url}
+                          className={` flex gap-2 justify-start items-center mr-2 text-lg group ${
+                            pathname === item.url ? 'text-main-200 font-bold' : 'text-sub-200 font-normal'
+                          }`}
                         >
-                          <span className='bg-main-200 flex items-center min-w-[32px] w-[32px] h-[32px] rounded-md object-cover'>
+                          <span
+                            className={`duration-300  flex items-center min-w-[32px] w-[32px] h-[32px] rounded-md object-cover ${
+                              pathname === item.url
+                                ? 'bg-white'
+                                : 'bg-main-200 group-hover:text-main-200 group-hover:bg-white'
+                            }`}
+                          >
                             {item.icon}
                           </span>
-                          <span className='text-lg text-sub-200 font-normal'>{item.name}</span>
+                          <span
+                            className={`text-lg ${
+                              pathname === item.url ? 'text-white font-bold' : 'text-sub-200 font-normal'
+                            }}`}
+                          >
+                            {item.name}
+                          </span>
                         </Link>
                       </li>
                     ))}
@@ -62,17 +88,41 @@ const Sidebar = ({ session, toggle, setToggle }) => {
                   Sign Out
                 </button>
               </div>
+              <div className='flex gap-3 items-center'>
+                <button
+                  className={`w-6 h-6 md:w-8 md:h-8 rounded-lg ${
+                    pathname === HomeData.url ? 'bg-main-100 text-sub-200' : 'bg-sub-200 text-main-200 '
+                  }`}
+                >
+                  {HomeData.icon}
+                </button>
+                <Link
+                  href={HomeData.url}
+                  className='text-sm md:text-lg text-sub-200 font-medium'
+                  onClick={() => setToggle(!toggle)}
+                >
+                  {HomeData.name}
+                </Link>
+              </div>
               <div className='gap-3 grid grid-cols-2'>
                 {SidebarLinks.map((item) => (
                   <div className='flex flex-col mt-5'>
                     <h3 className='text-lg md:text-2xl text-sub-200 font-semibold'>{item.name}</h3>
                     <div className='flex flex-col gap-3'>
                       {item.links.map((link) => (
-                        <div className='flex gap-2'>
-                          <button className='text-main-200 w-6 h-6 md:w-8 md:h-8 rounded-lg bg-sub-200'>
+                        <div className='flex gap-2 items-center'>
+                          <button
+                            className={`w-6 h-6 md:w-8 md:h-8 rounded-lg ${
+                              pathname === link.url ? 'bg-main-100 text-sub-200' : 'bg-sub-200 text-main-200 '
+                            }`}
+                          >
                             {link.icon}
                           </button>
-                          <Link href={'/'} className='text-sm md:text-lg text-sub-200 font-medium'>
+                          <Link
+                            href={link.url}
+                            className='text-sm md:text-lg text-sub-200 font-medium'
+                            onClick={() => setToggle(!toggle)}
+                          >
                             {link.name}
                           </Link>
                         </div>

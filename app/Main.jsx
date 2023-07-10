@@ -12,7 +12,7 @@ export default function Main() {
   return (
     <div>
       {session && status === 'authenticated' ? (
-        redirect('/discover')
+        redirect('/games')
       ) : (
         <>
           <Hero />

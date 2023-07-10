@@ -8,8 +8,9 @@ export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [totalPages,setTotalPages] = useState(0)
   return (
-    <AppContext.Provider value={{ toggle, setToggle, data, setData, page, setPage, loading, setLoading }}>
+    <AppContext.Provider value={{ toggle, setToggle, data, setData, page, setPage, loading, setLoading,totalPages,setTotalPages }}>
       {children}
     </AppContext.Provider>
   );
