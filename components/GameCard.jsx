@@ -70,7 +70,7 @@ const GameCard = ({ data, setData }) => {
     <div className='my-4'>
       <div>
         <div className='flex flex-col items-center'>
-          <div className='card grid w-full gap-6 lg:grid-cols-3 2xl:grid-cols-4'>
+          <div className='card grid w-full gap-5 lg:grid-cols-3 2xl:grid-cols-4'>
             {data?.map((card) => (
               <div
                 className={`${card?.expand ? 'lg:relative' : 'lg:static'}`}

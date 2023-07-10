@@ -13,9 +13,9 @@ const Page = () => {
     <>
       {session && status === 'authenticated' ? (
         <div className='flex flex-grow-1 justify-center w-full min-h-full'>
-          <div className='px-[40px] flex justify-start items-start'>
+          <div className='p-3 lg:px-[40px] flex justify-start items-start'>
             <Sidebar session={session} toggle={toggle} setToggle={setToggle} />
-            <main className='max-w-[1920px] flex flex-col flex-grow w-full'>
+            <main className='max-w-[1920px] flex flex-col flex-grow'>
               <div>
                 <Title title='New and trending' subTitle='Based on player counts and release date' />
                 <GameCard data={data} setData={setData} />

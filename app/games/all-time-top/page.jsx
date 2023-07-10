@@ -17,7 +17,7 @@ const Page = () => {
             <Sidebar session={session} toggle={toggle} setToggle={setToggle} />
             <main className='max-w-[1920px] flex flex-col flex-grow w-full'>
               <div>
-                <Title title='This week' />
+                <Title title='All time top 100' />
                 <GameCard data={data} setData={setData} />
                 <ReactPaginate
                   previousLabel={'Prev'}

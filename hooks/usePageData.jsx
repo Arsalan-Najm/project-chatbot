@@ -20,6 +20,12 @@ const usePageData = () => {
         apiUrl = `/api/games/this-week?page=${page}`;
       } else if (path === '/games/next-week') {
         apiUrl = `/api/games/next-week?page=${page}`;
+      } else if (path === '/games/best-of-the-year') {
+        apiUrl = `/api/games/best-of-the-year?page=${page}`;
+      } else if (path === '/games/popular-in-2022') {
+        apiUrl = `/api/games/top-2022?page=${page}`;
+      } else if (path === '/games/all-time-top') {
+        apiUrl = `/api/games/top-100?page=${page}`;
       }
 
       const response = await fetch(apiUrl);

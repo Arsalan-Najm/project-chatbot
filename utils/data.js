@@ -1,9 +1,7 @@
 import {
-  BsBoxArrowRight,
   BsStarFill,
   BsFire,
   BsSkipForwardFill,
-  BsCalendarDate,
   BsTrophyFill,
   BsBarChartLineFill,
   BsCodeSlash,
@@ -49,11 +47,6 @@ export const SidebarLinks = [
         url: '/games/next-week',
         icon: <BsSkipForwardFill className='m-auto scale-[1.3]' />,
       },
-      {
-        name: 'Release calendar',
-        url: '/games/release-calendar',
-        icon: <BsCalendarDate className='m-auto scale-[1.3]' />,
-      },
     ],
   },
   {
@@ -70,8 +63,8 @@ export const SidebarLinks = [
         icon: <BsBarChartLineFill className='m-auto scale-[1.3]' />,
       },
       {
-        name: 'All time top 50',
-        url: '/games/all-time-top-50',
+        name: 'All time top 100',
+        url: '/games/all-time-top',
         icon: <FaCrown className='m-auto scale-[1.3]' />,
       },
     ],
