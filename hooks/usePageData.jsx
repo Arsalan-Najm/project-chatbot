@@ -26,6 +26,8 @@ const usePageData = () => {
         apiUrl = `/api/games/top-2022?page=${page}`;
       } else if (path === '/games/all-time-top') {
         apiUrl = `/api/games/top-100?page=${page}`;
+      } else if (path === '/platforms') {
+        apiUrl = `/api/platforms`;
       }
 
       const response = await fetch(apiUrl);

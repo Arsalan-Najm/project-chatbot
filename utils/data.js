@@ -114,32 +114,32 @@ export const SidebarLinks = [
     links: [
       {
         name: 'PC',
-        url: '/games/pc',
+        url: '/platforms/pc',
         icon: <FaWindows className='m-auto scale-[1.3]' />,
       },
       {
         name: 'PlayStation',
-        url: '/games/playstation',
+        url: '/platforms/playstation',
         icon: <FaPlaystation className='m-auto scale-[1.3]' />,
       },
       {
         name: 'Xbox',
-        url: '/games/lxbox',
+        url: '/platforms/xbox',
         icon: <FaXbox className='m-auto scale-[1.3]' />,
       },
       {
         name: 'Nintendo Switch',
-        url: '/games/nintendo-switch',
+        url: '/platforms/nintendo-switch',
         icon: <BsNintendoSwitch className='m-auto scale-[1.3]' />,
       },
       {
         name: 'IOS',
-        url: '/games/ios',
+        url: '/platforms/ios',
         icon: <FaApple className='m-auto scale-[1.3]' />,
       },
       {
         name: 'Android',
-        url: '/games/android',
+        url: '/platforms/android',
         icon: <BsAndroid2 className='m-auto scale-[1.3]' />,
       },
     ],
