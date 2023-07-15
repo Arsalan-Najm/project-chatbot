@@ -8,7 +8,7 @@ const Sidebar = ({ session, toggle, setToggle }) => {
   return (
     <>
       {/* desktop sidebar */}
-      <div className='sticky top-0 bg-transparent pr-5 hidden lg:block'>
+      <div className='sticky top-0 bg-transparent hidden lg:block'>
         <aside className='w-[200px] mt-10 mr-5'>
           <nav>
             <div>

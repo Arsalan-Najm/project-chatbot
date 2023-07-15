@@ -19,7 +19,7 @@ const usePageData = () => {
       } else if (path === '/games/this-week') {
         apiUrl = `/api/games/this-week?page=${page}`;
       } else if (path === '/games/next-week') {
-        apiUrl = `/api/games/next-week?page=${page}`;
+        apiUrl = `/api/games/next-week`;
       } else if (path === '/games/best-of-the-year') {
         apiUrl = `/api/games/best-of-the-year?page=${page}`;
       } else if (path === '/games/popular-in-2022') {
@@ -28,6 +28,12 @@ const usePageData = () => {
         apiUrl = `/api/games/top-100?page=${page}`;
       } else if (path === '/platforms') {
         apiUrl = `/api/platforms`;
+      } else if (path === '/stores') {
+        apiUrl = `/api/stores`;
+      } else if (path === '/genres') {
+        apiUrl = `/api/genres`;
+      } else if (path === '/tags') {
+        apiUrl = `/api/tags?page=${page}`;
       }
 
       const response = await fetch(apiUrl);

@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body className={`main bg-black ${tajawal.className}`}>
         <Provider>
           <ContextProvider>
-            <div className='relative overflow-hidden lg:overflow-visible'>
+            <div className='relative flex flex-col min-h-full overflow-hidden lg:overflow-visible'>
               <NavBar />
               {children}
             </div>

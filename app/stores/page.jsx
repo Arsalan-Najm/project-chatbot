@@ -1,13 +1,13 @@
 'use client';
 import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-import { Title, GameCard, Sidebar } from '@/components';
+import { Title, DetailCard, Sidebar } from '@/components';
 import { useApp } from '@/context/AppContext';
 import usePageData from '@/hooks/usePageData';
-import ReactPaginate from 'react-paginate';
+
 const page = () => {
   const { data: session, status } = useSession();
-  const { toggle, setToggle, setData, totalPages } = useApp();
+  const { toggle, setToggle, setData } = useApp();
   const { data, loading, handleLoadMore } = usePageData();
   return (
     <>
@@ -18,10 +18,10 @@ const page = () => {
             <main className='max-w-[480px] lg:max-w-[1920px] mx-auto flex flex-col flex-grow w-full'>
               <div>
                 <div>
-                  <Title title='Next week' />
+                  <Title title='Stores' />
                 </div>
-                <div>
-                  <GameCard data={data} toggle={toggle} setToggle={setToggle} setData={setData} />
+                <div className='py-4'>
+                  <DetailCard data={data} toggle={toggle} setToggle={setToggle} setData={setData} />
                 </div>
               </div>
             </main>
